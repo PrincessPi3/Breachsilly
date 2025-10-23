@@ -6,6 +6,7 @@ normalized
 backup_files
 # temp, test, backup, and log files
 lists/*.txt
+hibp_sha1_dir/*.txt
 *.tmp.txt
 test_*
 *.bak
