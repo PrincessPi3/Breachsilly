@@ -3,14 +3,14 @@ set -e # dont waste my asstime if errros bitch
 # da timestiampppy liek 20251020
 timestamp=$(date +%Y%m%d)
 # lougs
-info_log=./info_log.log
-error_log=./error_log.log
+info_log="./info_log.log"
+error_log="./error_log.log"
 # fiels
 ## this is both the downloaded fiel and da file to sort
 ## da fuckin genetal wards dotnet app auto appends .txt to the file name jesus fuck
 download_file="lists/${timestamp}_sorted_download_single_sha1" # again no txt because the dotnet app is a form of sexually transmitted infectoion
     # count total lines for progress tracking
-    echo "countin total lines..." | tee -a "$info_log"
+    echo "countin total lines..." | tee -a $info_log
     total_lines=$(wc -l < "$download_file.txt")
     echo "total lines to process: $total_lines" | tee -a "$info_log"
     
