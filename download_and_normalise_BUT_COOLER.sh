@@ -2,6 +2,9 @@
 set -e # dont waste my asstime if errros bitch
 # da timestiampppy liek 20251020
 timestamp=$(date +%Y%m%d)
+# lougs
+info_log=./info_log.log
+error_log=./error_log.log
 # fiels
 ## this is both the downloaded fiel and da file to sort
 ## da fuckin genetal wards dotnet app auto appends .txt to the file name jesus fuck
@@ -16,11 +19,8 @@ download_file="lists/${timestamp}_sorted_download_single_sha1" # again no txt be
     [[ $update_interval -lt 1 ]] && update_interval=1
     last_update=0
     processed_lines=0
-softlink_name=hibp_list
+softlink_name=./hibp_list
 # backup_file=bak/test_sorted_single_sha1.tmp.txt.7z # donut need dis oc unless bein stoopd wit da backup ig
-# lougs
-info_log=info_log.log
-error_log=error_log.log
 
 # ig measure how long each fluttercum takes for fun idk
 time_it () {
