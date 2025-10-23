@@ -1,0 +1,2 @@
+#!/bin/bash
+smbencrypt dingle | awk '{print $1}' | tail -1

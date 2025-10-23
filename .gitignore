@@ -1,0 +1,12 @@
+# da soft link to latest hibp multi file dir
+hibp_list
+# dirs
+logs
+normalized
+backup_files
+lists
+# temp, test, backup, and log files
+*.tmp.txt
+test_*
+*.bak
+*.log

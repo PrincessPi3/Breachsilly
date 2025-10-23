@@ -1,0 +1,25 @@
+awk '{val="0x" $1; print strtonum(val),$0 ;}' your_file.txt | sort -n -k 1 | sed 's/^[^ ]* //'
+
+```
+#!/bin/bash
+# fiels
+input_file="$PWD/test_sha1.tmp.txt"
+sorted_file="$PWD/test_SORTED_sha1.tmp.txt"
+log_file="$PWD/info.log"
+
+# start da timer
+start=$(date +%s)
+
+# do da magical sortfuck
+awk '{val="0x" $1; print strtonum(val),$0 ;}' "$input_file" | sort -n -k 1 | sed 's/^[^ ]* //' > "$sorted_file"
+end=$(date +%s)
+
+# end da timer and caluclate duratrion
+duration=$(($end - $start))
+
+# updoot da log
+echo "$(date): $input_file sorted to $sorted_file in $duration seconds" | tee -a "$log_file"
+
+# send silly webhookfuckin
+webhook "DILDO MACCARONI ITS FOOKAN DONE IN FOOKAN $duration SECONDS" true
+```

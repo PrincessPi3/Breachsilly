@@ -1,0 +1,30 @@
+auto start in byobu
+environment check
+    packages
+    dotnet
+    downdooter
+    files in current dir
+        interactively ask to delete files
+speed up rg
+test time
+nosleep
+sanity checks
+    hash lengths
+    successful sorting in txt files
+sum kinda bettar progress indicator
+    timing for estimated completion
+
+sort then split! # literally fucking must do this to have any god damned chance
+    # DO SOME MORE RESEARCH
+    # also prepends da 0x remov
+    awk '{val="0x" $1; print strtonum(val),$0 ;}' your_file | sort -n -k 1 | sed 's/^[^ ]* //'
+
+    # another option
+    ## does this assume 0x??
+    paste -d: <(echo 'ibase=16'; cut -d' ' -f1 your_file | bc) your_file | sort -t: -k1,1n | cut -d: -f2-
+
+    # opttion?
+    ## prepend 0x to each line?
+    ## -g is GENRAL numerical sort and it can handle hex nativelu
+    ## does not work will have to prepend 0x
+    sort -o outfilename -g filename

@@ -1,0 +1,3 @@
+tar gzip bzip2 rar zip 7z xz conv ripgrep screen byobu
+dotnet 
+    haveibeenpwned-downloader
