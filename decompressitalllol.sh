@@ -30,7 +30,7 @@ IFS=$'\n\t'
 
 backup=./backup_file # backups of the archives
 log_dir=./logs # logs
-out_dir=./normalized # where the decomressed and normalizerd files go
+out_dir=/mnt/e/Breachsilly_Normalized # where the decomressed and normalizerd files go
 iterations=3 # recursive decompress levels (can override via env var ITERATIONS)
 ingress=/mnt/e/Breachsilly_Ingress # can override via env var INGRESS (use WSL-style path)
 
