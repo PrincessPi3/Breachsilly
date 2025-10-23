@@ -8,18 +8,6 @@ error_log="./error_log.log"
 # fiels
 ## this is both the downloaded fiel and da file to sort
 ## da fuckin genetal wards dotnet app auto appends .txt to the file name jesus fuck
-download_file="lists/${timestamp}_sorted_download_single_sha1" # again no txt because the dotnet app is a form of sexually transmitted infectoion
-    # count total lines for progress tracking
-    echo "countin total lines..." | tee -a $info_log
-    total_lines=$(wc -l < "$download_file.txt")
-    echo "total lines to process: $total_lines" | tee -a "$info_log"
-    
-    # for progress updates every 1%
-    update_interval=$((total_lines / 100))
-    [[ $update_interval -lt 1 ]] && update_interval=1
-    last_update=0
-    processed_lines=0
-softlink_name=./hibp_list
 # backup_file=bak/test_sorted_single_sha1.tmp.txt.7z # donut need dis oc unless bein stoopd wit da backup ig
 
 # ig measure how long each fluttercum takes for fun idk
@@ -91,6 +79,7 @@ compress_run_silly () {
     # compress the files in ./lists  to one 7z archive
     7z a ./hibp_sha1_individual_sorted_$timestamp.7z hibp_sha1_dir
 }
+
 
 echo "startan scripty at $(date)"
 
