@@ -4,8 +4,8 @@ hibp_list
 logs
 normalized
 backup_files
-lists
 # temp, test, backup, and log files
+lists/*.txt
 *.tmp.txt
 test_*
 *.bak
