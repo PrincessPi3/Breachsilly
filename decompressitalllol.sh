@@ -1,7 +1,7 @@
 #/bin/bash
 
 # safer bash behaviour
-set -euo pipefail
+# set -euo pipefail
 IFS=$'\n\t'
 
 # todo
