@@ -1,4 +1,4 @@
-bin/bash
+#/bin/bash
 
 # safer bash behaviour
 set -euo pipefail
