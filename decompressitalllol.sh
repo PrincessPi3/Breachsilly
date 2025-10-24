@@ -1,4 +1,4 @@
-#!/bin/bash
+bin/bash
 
 # safer bash behaviour
 set -euo pipefail
@@ -88,36 +88,36 @@ backup_silly () {
     # get da tree and file info and suc h
     info_silly
     ## tar.gz
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.gz" -print -exec cp -v {} "$backup/tar.gz/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.gz" -print -exec cp -v {} "$backup/tar.gz/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## tar.bz2
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.bz2" -print -exec cp -v {} "$backup/tar.bz2/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.bz2" -print -exec cp -v {} "$backup/tar.bz2/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## tar.xz
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.xz" -print -exec cp -v {} "$backup/tar.xz/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.xz" -print -exec cp -v {} "$backup/tar.xz/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## gz
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.gz" -print -exec cp -v {} "$backup/gz/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.gz" -print -exec cp -v {} "$backup/gz/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## bz2
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.bz2" -print -exec cp -v {} "$backup/bz2/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.bz2" -print -exec cp -v {} "$backup/bz2/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## tar
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar" -print -exec cp -v {} "$backup/tar/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar" -print -exec cp -v {} "$backup/tar/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## rar
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.rar" -print -exec cp -v {} "$backup/rar/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.rar" -print -exec cp -v {} "$backup/rar/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## zip
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.zip" -print -exec cp -v {} "$backup/zip/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.zip" -print -exec cp -v {} "$backup/zip/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## 7z
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.7z" -print -exec cp -v {} "$backup/7z/" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.7z" -print -exec cp -v {} "$backup/7z/" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## xz
-    find $ingress \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -iname "*.xz" -print -exec cp {} "$backup/xz" 2>>"$error_log" \; 2>>"$error_log"
+    find $ingress \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -iname "*.xz" -print -exec cp {} "$backup/xz" 2>>"$error_log" \;  -delete 2>>"$error_log"
 }
 
 # recursively decompress all da things to pwd
 decompress_silly () {
     ## do all the tar.x ones first to prevent issues
     ### tar.gz
-    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.gz" -print -exec tar -xvzf "{}" -C "$out_dir" 2>>"$error_log" \; 2>>"$error_log"
+    find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.tar.gz" -print -exec tar -xvzf "{}" -C "$out_dir" 2>>"$error_log" \; -delete 2>>"$error_log"
     ### tar.bz2
-    find $ingress \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -iname "*.tar.bz2" -print -exec tar -xvjf "{}" -C "$out_dir" 2>>"$error_log" \; 2>>"$error_log"
+    find $ingress \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -iname "*.tar.bz2" -print -exec tar -xvjf "{}" -C "$out_dir" 2>>"$error_log" \; -delete 2>>"$error_log"
     ### tar.xz
-    find $ingress \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -iname "*.tar.xz" -print -exec tar -xvJf "{}" -C "$out_dir" 2>>"$error_log" \; 2>>"$error_log"
+    find $ingress \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -iname "*.tar.xz" -print -exec tar -xvJf "{}" -C "$out_dir" 2>>"$error_log" \; -delete 2>>"$error_log"
     ## now do the rest
     ### gz
     find "$ingress" \( -path "$backup" -o -path "$log_dir" -o -path "$out_dir" -o -path "./.git" \) -prune -o -iname "*.gz" -print -exec bash -c 'f="$1"; out="$2"; gzip -dc "$f" > "${out}/$(basename "${f%.gz}")"' _ {} "$out_dir" 2>>"$error_log" \; 2>>"$error_log"
