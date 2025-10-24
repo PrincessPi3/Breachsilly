@@ -5,6 +5,7 @@ timestamp=$(date +%Y%m%d)
 # lougs
 info_log="./info_log.log"
 error_log="./error_log.log"
+download_file="./lists/${timestamp}_haveibeenpwned_sha1"
 # fiels
 ## this is both the downloaded fiel and da file to sort
 ## da fuckin genetal wards dotnet app auto appends .txt to the file name jesus fuck
